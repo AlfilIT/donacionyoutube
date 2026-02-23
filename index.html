@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>E-book IA con Java + Spring Boot - ¡Descarga GRATIS Antes de que Cambie Todo!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00eaff;
+            --primary-dark: #00b8d4;
+            --bg-dark: #0a0e14;
+            --bg-darker: #000306;
+            --text: #e0f7fa;
+            --text-light: #80deea;
+            --accent: #00c853;
+            --warning: #ffab00;
+            --danger: #ff1744;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+        header {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at top center, rgba(0,234,255,0.12) 0%, transparent 70%);
+        }
+        h1 {
+            font-size: clamp(2.8rem, 8vw, 4.8rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #00eaff, #00ff9d, #7cffc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0,234,255,0.4);
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            max-width: 900px;
+            margin: 0 auto 60px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        .urgency {
+            font-size: 1.4rem;
+            color: var(--warning);
+            font-weight: 600;
+            margin: 20px 0 40px;
+            padding: 12px 24px;
+            background: rgba(255,171,0,0.12);
+            border: 1px solid rgba(255,171,0,0.3);
+            border-radius: 12px;
+            display: inline-block;
+        }
+        .ebook-mockup {
+            max-width: 480px;
+            margin: 0 auto 80px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,234,255,0.35);
+            transform: perspective(1400px) rotateY(8deg);
+            transition: all 0.8s ease;
+        }
+        .ebook-mockup:hover {
+            transform: perspective(1400px) rotateY(0deg) scale(1.04);
+        }
+        .ebook-mockup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .donation-urgency {
+            background: linear-gradient(to bottom, rgba(255,171,0,0.08), transparent);
+            border-top: 1px solid rgba(255,171,0,0.2);
+            border-bottom: 1px solid rgba(255,171,0,0.2);
+        }
+        .qr-container {
+            margin: 50px auto;
+            max-width: 280px;
+        }
+        .donation-qr {
+            width: 100%;
+            border: 10px solid white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            transition: transform 0.4s;
+        }
+        .donation-qr:hover { transform: scale(1.08); }
+        .alias-box {
+            background: rgba(0,234,255,0.08);
+            border: 2px dashed var(--primary);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 40px auto;
+            max-width: 500px;
+        }
+        .alias {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .cvu {
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+        .btn {
+            display: inline-block;
+            font-weight: 700;
+            padding: 20px 60px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            margin: 30px 20px;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .btn-download {
+            background: linear-gradient(90deg, #00c853, #76ff03);
+            color: white;
+        }
+        .btn-download:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 25px 60px rgba(0,200,83,0.6);
+        }
+        .btn-donate {
+            background: linear-gradient(90deg, var(--warning), #ff6d00);
+            color: #000;
+        }
+        .btn-donate:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 25px 60px rgba(255,171,0,0.7);
+        }
+        .benefits-list {
+            list-style: none;
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: left;
+            font-size: 1.25rem;
+        }
+        .benefits-list li {
+            margin-bottom: 28px;
+            padding-left: 50px;
+            position: relative;
+        }
+        .benefits-list li::before {
+            content: '🚀';
+            position: absolute;
+            left: 0;
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+        footer {
+            text-align: center;
+            padding: 60px 0 100px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 3.2rem; }
+            .subtitle { font-size: 1.4rem; }
+            .ebook-mockup { max-width: 360px; }
+            .btn { padding: 16px 48px; font-size: 1.25rem; margin: 20px 10px; }
+            .section { padding: 60px 0; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            header { padding: 70px 0 50px; }
+            .alias { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Domina IA Real con Java + Spring Boot</h1>
+            <p class="subtitle">El e-book definitivo que miles de desarrolladores ya están usando para construir aplicaciones inteligentes con Spring Boot. Proyectos reales, código listo para producción y secretos que no encontrarás en tutoriales gratuitos.</p>
+            <div class="urgency">¡Descarga GRATIS AHORA – el acceso libre podría terminar pronto!</div>
+            
+            <div class="ebook-mockup">
+                <img src="https://thumbs.dreamstime.com/b/open-book-glowing-ai-symbols-representing-technology-innovation-education-merging-physical-digital-worlds-knowledge-439058588.jpg" 
+                     alt="E-book IA con Java y Spring Boot – Contenido premium">
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="font-size: 2.8rem; margin-bottom: 50px; color: var(--primary);">¿Qué vas a ganar si descargas este e-book HOY?</h2>
+            <ul class="benefits-list">
+                <li>Implementaciones reales de IA en Spring Boot que puedes usar en tu trabajo mañana mismo.</li>
+                <li>Código fuente completo y comentado – copia, adapta y ahorra cientos de horas.</li>
+                <li>Evita los errores caros que cometen el 95% de los devs al empezar con IA.</li>
+                <li>Actualizaciones vitalicias: nuevas versiones con lo último en agents, RAG y más.</li>
+                <li>Posiciónate como experto en IA + Java – el skill más demandado y mejor pagado en 2026.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="donation-urgency section">
+        <div class="container">
+            <h2 style="font-size: 2.8rem; margin-bottom: 40px; color: var(--warning);">¡Si este material te está volando la cabeza... no lo dejes pasar sin apoyar!</h2>
+            <p style="font-size: 1.5rem; max-width: 900px; margin: 0 auto 50px; line-height: 1.5;">
+                Cada donación (sugerida 2500 ARS o lo que realmente puedas) me permite seguir creando contenido de altísimo nivel sin sponsors corporativos ni paywalls. 
+                <strong>Tu aporte directo significa más e-books, videos profundos y actualizaciones exclusivas para vos.</strong><br><br>
+                <span style="color: var(--danger); font-weight: 700;">No es obligatorio… pero los que donan hoy son los que más rápido avanzan y reciben prioridad en todo lo que viene.</span>
+            </p>
+
+            <div class="qr-container">
+                <img src="C:\Users\Francisco_Romero\Documents\02-Trabajo\01.Desarrollos\Proyecto YouTube\Proyecto E-Book\QRMP.png" alt="QR para donación rápida vía Mercado Pago" class="donation-qr">
+            </div>
+
+            <div class="alias-box">
+                <div class="alias">Alias: alfilit.mp</div>
+            </div>
+
+            <p style="font-size: 1.4rem; color: var(--accent); margin-top: 30px; font-weight: 600;">
+                ¡Gracias de corazón por ser parte de esta revolución en devs Java + IA!
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <a href="https://drive.google.com/uc?export=download&id=TU_DRIVE_FILE_ID" class="btn btn-download" download>
+                Descargar Tu E-book GRATIS AHORA (¡Antes de que suba el precio!)
+            </a>
+            <a href="#donation" class="btn btn-donate">
+                Apoyar con 2500 ARS (o lo que puedas) y acelerar todo
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Francisco Rafael | Canal de YouTube: IA con Java & Spring Boot</p>
+    </footer>
+
+</body>
+</html>
